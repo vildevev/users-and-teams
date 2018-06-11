@@ -1,7 +1,10 @@
 require 'sqlite3'
 
+# The user input
 user_input_email = ARGV[0].to_s
 user_email_domain = user_input_email.split('@')[-1]
+
+# Variables for the print statements, defined here so we have access not just in the function scope
 teams_member_in = []
 possible_teams = []
 teams_with_members = []
@@ -14,7 +17,7 @@ def in_query_parametization(obj_arr)
 	query_str.concat(arr.join(',') + ')')
 end 
 
-# Opening up the database
+# Open up the db file
 SQLite3::Database.open("appeng_take_home_db") do |db|
 	# Find all the teams that the given email is a member of, excluding the deleted
   db.execute("SELECT * FROM teams JOIN users ON teams.id=users.team_id WHERE email=? and deleted=0;", [user_input_email] ) do |team_obj|
@@ -33,6 +36,7 @@ SQLite3::Database.open("appeng_take_home_db") do |db|
   end 
 end
 
+# Print the results to the user:
 print "You are a member of: \n"
 teams_member_in.each do |team_obj|
 	print "#{team_obj[1]} (#{team_obj[0]}) \n"
