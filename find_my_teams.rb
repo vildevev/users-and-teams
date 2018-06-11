@@ -26,7 +26,7 @@ SQLite3::Database.open("appeng_take_home_db") do |db|
   	possible_teams[team_obj[0]] = team_obj
   	possible_teams_obj << team_obj
   end 
-  # current_teams_str = in_query_parametization(possible_teams_obj)
+  current_teams_str = in_query_parametization(possible_teams_obj)
   # Find how many members the possible teams have, sort them in descending order
   db.execute("SELECT users.team_id, COUNT(*) AS NUM_OF_USERS_IN_GROUP FROM users WHERE users.team_id IN #{current_teams_str} GROUP BY users.team_id ORDER BY NUM_OF_USERS_IN_GROUP DESC") do |team_w_count|
   	teams_with_members << team_w_count
