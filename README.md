@@ -15,3 +15,5 @@
 # - Inside the directory run the command (quotes around the input is optional):
 
 	> ruby find_my_teams.rb "daffy_duck@qa.com"
+
+# Full disclosure: When I ran the file yesterday everything worked perfectly, however after the latest mac update I get the error 'Killed: 9' whenever I attempt to run the file. I'm currently waiting for Apple customer service, but I want to submit my submission before it's too late. Hopefully it'll work on your computers. 
