@@ -16,4 +16,4 @@
 
 	> ruby find_my_teams.rb "daffy_duck@qa.com"
 
-# Full disclosure: When I ran the file yesterday everything worked perfectly, however after the latest mac update I get the error 'Killed: 9' whenever I attempt to run the file. I'm currently waiting for Apple customer service, but I want to submit my submission before it's too late. Hopefully it'll work on your computers. 
+# Full disclosure: When I ran the file yesterday everything worked perfectly, however after the latest mac update I get the error 'Killed: 9' whenever I attempt to run the file, specifically when I run the second query. I'm currently trying to resolve the issue, but I want to submit my submission before it's too late. Hopefully it will work on your computers. 
