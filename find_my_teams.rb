@@ -31,7 +31,7 @@ def find_teams_with_members(db, possible_teams_str, teams_with_members, possible
   # Clone hash in order to not alter
   possible_teams_clone = possible_teams.clone
   # Find how many members the possible teams have, sort them in descending order
-  db.execute("SELECT team_id, COUNT(*) AS NUM_OF_USERS_IN_GROUP FROM users WHERE team_id IN #{possible_teams_str} GROUP BY team_id ORDER BY NUM_OF_USERS_IN_GROUP DESC") do |team_obj|
+  db.execute("SELECT team_id, COUNT(*) AS NUM_OF_USERS_IN_GROUP FROM users WHERE team_id IN #{possible_teams_str} AND deleted=0 GROUP BY team_id ORDER BY NUM_OF_USERS_IN_GROUP DESC") do |team_obj|
     # Delete teams that are added to array
     possible_teams_clone.delete(team_obj[0])
     teams_with_members << team_obj
