@@ -47,10 +47,10 @@ def print_team_info(teams_member_in, teams_with_members, possible_teams)
   # Print the results to the user
   print "✨ You are a member of: \n"
   teams_member_in.each do |team_obj|
-	 print "#{team_obj[1]} (#{team_obj[0]}) \n\n"
+	 print "#{team_obj[1]} (#{team_obj[0]}) \n"
   end
 
-  print "✨ You are eligible to join: \n"
+  print "\n✨ You are eligible to join: \n"
   teams_with_members.each do |team_obj|
 	 team_info = possible_teams[team_obj[0]]
 	 print "#{team_info[1]} (#{team_info[0]})         #{team_obj[1]} members\n"
